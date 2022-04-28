@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-const CarroController = require('./controllers/CarroController');
+const CarController = require('./controllers/CarController');
 
-router.get('/carros', CarroController.buscarTodos);
-router.get('/carro/:codigo', CarroController.buscarUm);
-router.post('/carro', CarroController.inserir);
-router.put('/carro/:codigo', CarroController.alterar);
-router.delete('/carro/:codigo', CarroController.excluir);
+router.get('/cars', CarController.searchAll);
+router.get('/car/:carCode', CarController.searchCar);
+router.post('/car', CarController.insert);
+router.put('/car/:carCode', CarController.update);
+router.delete('/car/:carCode', CarController.delete);
 
 module.exports = router;
 
