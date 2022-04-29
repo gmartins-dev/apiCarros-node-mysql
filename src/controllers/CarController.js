@@ -21,7 +21,7 @@ module.exports = {
         let json = {error:'', result:{}};
 
         let carsCode = req.params.carCode; //para pegar o parametro
-        console.log(carsCode)
+        
         let car = await CarService.searchCar(carsCode);
 
         if(car){
