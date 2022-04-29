@@ -53,7 +53,7 @@ module.exports = {
     update: async(req, res) => {
         let json = {error:'', result:{}};
 
-        let carsCode = req.params.carsCode;
+        let carsCode = req.params.carCode;
         let carsModel = req.body.carsModel;
         let carsPlate = req.body.carsPlate;
 
@@ -72,7 +72,7 @@ module.exports = {
     delete: async(req, res) => {
         let json = {error:'', result:{}};
 
-        await CarService.delete(req.params.carsCode);
+        await CarService.delete(req.params.carCode);
         
         res.json(json);
     },
