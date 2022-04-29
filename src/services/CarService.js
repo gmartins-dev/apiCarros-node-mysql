@@ -14,7 +14,7 @@ module.exports = {
     searchCar: (carsCode) => {
         return new Promise((accepted, rejected)=>{
 
-            db.query('SELECT * FROM cars WHERE carsCode = ?', [carsCode], (error, results) => {
+            let teste = db.query('SELECT * FROM cars WHERE carsCode = ?', [carsCode], (error, results) => {
                 if(error) { rejected(error); return; }
                 if(results.length > 0){ //vai verificar se retornou mais de 1 e pegar o 1
                     accepted(results[0]);
