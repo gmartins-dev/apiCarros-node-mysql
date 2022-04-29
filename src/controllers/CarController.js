@@ -2,10 +2,10 @@ const CarService = require('../services/CarService');
 
 module.exports = {
     
-    searchAll: async (req, res) => {
+    selectAll: async (req, res) => {
         let json = {error:'', result:[]};
 
-        let cars = await CarService.searchAll();
+        let cars = await CarService.selectAll();
 
         for(let i in cars){
             json.result.push({
@@ -17,12 +17,12 @@ module.exports = {
         res.json(json);
     },
 
-    searchCar: async (req, res) => {
+    selectCar: async (req, res) => {
         let json = {error:'', result:{}};
 
-        let carsCode = req.params.carCode; //para pegar o parametro
-        
-        let car = await CarService.searchCar(carsCode);
+        let carsCode = req.params.carCode; //para codigo de um carro(objeto) especifico
+
+        let car = await CarService.selectCar(carsCode);
 
         if(car){
             json.result = car; 

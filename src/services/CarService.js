@@ -1,7 +1,7 @@
 const db = require('../db');
 
 module.exports = {
-    searchAll: () => {
+    selectAll: () => {
         return new Promise((accepted, rejected)=>{
 
             db.query('SELECT * FROM cars', (error, results)=>{
@@ -11,7 +11,7 @@ module.exports = {
         });
     },
 
-    searchCar: (carsCode) => {
+    selectCar: (carsCode) => {
         return new Promise((accepted, rejected)=>{
 
             let teste = db.query('SELECT * FROM cars WHERE carsCode = ?', [carsCode], (error, results) => {
