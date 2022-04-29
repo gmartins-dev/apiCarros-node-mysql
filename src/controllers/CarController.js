@@ -24,7 +24,7 @@ module.exports = {
         let car = await CarService.searchCar(carsCode);
 
         if(car){
-            json.result = car; //se tiver nota ele joga no json
+            json.result = car; 
         }
 
         res.json(json);
